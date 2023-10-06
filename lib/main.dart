@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapp/pages/get_started.dart';
+import 'package:groceryapp/pages/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GetStarted(),
+      home: const GetStarted(),
+      routes: {
+        '/homescreen': (context) => const HomeScreen(),
+      },
     );
   }
 }

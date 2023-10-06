@@ -16,10 +16,7 @@ class GetStarted extends StatelessWidget {
           child: const Text("Get Started!"),
           onPressed: () {
             //Navigate to Login but for now, Navigate to Home
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()),
-            );
+            Navigator.pushNamed(context, '/homescreen');
           },
         ),
       ),
