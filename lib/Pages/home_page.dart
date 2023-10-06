@@ -450,16 +450,17 @@ void main() {
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          // profile
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
 
           // cart
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Cart',
+          ),
+
+          // profile
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ]),
       ),
