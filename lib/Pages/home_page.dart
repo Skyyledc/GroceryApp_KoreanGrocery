@@ -300,7 +300,6 @@ void main() {
                   //Promo Text Container End
 
                   //Promo Main Container -> Carousel
-                  // Generated code for this PromoCarousel Widget...
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                     child: Row(
@@ -369,7 +368,7 @@ void main() {
                   //Promo Main Container -> Carousel End
 
                   //Popular Items Text Container
-                  // Generated code for this Row Widget...
+
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                     child: Row(
