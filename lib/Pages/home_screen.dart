@@ -48,6 +48,7 @@ class HomeScreen extends StatelessWidget {
               //ListView Contents
               children: [
                 //Top Container for Choices
+
                 Align(
                   alignment: const AlignmentDirectional(0.00, 0.00),
                   child: Padding(
@@ -443,26 +444,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        // home
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-
-        // cart
-        BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart),
-          label: 'Cart',
-        ),
-
-        // profile
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Profile',
-        ),
-      ]),
     );
   }
 }
