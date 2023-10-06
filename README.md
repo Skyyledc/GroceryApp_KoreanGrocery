@@ -2,15 +2,7 @@
 
 A new Flutter project.
 
-## Getting Started
+10/6/23
+Added Home Page UI
+![image](https://github.com/Skyyledc/GroceryApp_KoreanGrocery/assets/123300731/b4ecdeaa-836e-42c3-a91d-a6e6db3e11be)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
