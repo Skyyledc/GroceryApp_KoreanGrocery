@@ -4,7 +4,7 @@
             "outputFile": "com.example.groceryapp-mergeDebugResources-9:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\Program Projects\\Flutter\\GroceryApp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\Program Projects\\Flutter\\GroceryApp_KoreanGrocery\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

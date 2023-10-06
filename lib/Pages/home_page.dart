@@ -60,7 +60,7 @@ void main() {
                             //First Child Container Fresh Meat
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  5, 0, 5, 0),
+                                  5, 5, 5, 0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
