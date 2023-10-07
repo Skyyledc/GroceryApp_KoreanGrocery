@@ -7,34 +7,16 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 24.0),
-          child: Icon(
-            Icons.shopping_basket,
-            color: Colors.grey[700],
-          ),
-        ),
-        title: Text(
-          'Annyeong!',
-          style: GoogleFonts.poppins(
-              color: const Color.fromARGB(255, 0, 0, 0),
-              fontWeight: FontWeight.w500),
-        ),
-      ),
-
       //Body Container
       body: Center(
         child: Container(
           height: double.infinity,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.white, Color.fromARGB(255, 128, 255, 244)],
-              stops: [0, 1],
-              begin: AlignmentDirectional(0, -1),
-              end: AlignmentDirectional(0, 1),
+              colors: [Colors.white, Colors.grey.shade500],
+              stops: const [0, 1],
+              begin: const AlignmentDirectional(0, -1),
+              end: const AlignmentDirectional(0, 1),
             ),
           ),
 
