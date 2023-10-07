@@ -1,8 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:groceryapp/models/models.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late PageController _pageController;
+  final int _currentPage = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _pageController =
+        PageController(initialPage: _currentPage, viewportFraction: 0.8);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+    _pageController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +41,6 @@ class HomeScreen extends StatelessWidget {
           //ListView Contents
           children: [
             //Top Container for Choices
-
             Align(
               alignment: const AlignmentDirectional(0.00, 0.00),
               child: Padding(
@@ -249,7 +276,7 @@ class HomeScreen extends StatelessWidget {
 
             //Promo Text Container
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -266,84 +293,22 @@ class HomeScreen extends StatelessWidget {
             //Promo Text Container End
 
             //Promo Main Container -> Carousel
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Order Now',
-                            style: GoogleFonts.poppins(
-                                fontSize: 18, fontWeight: FontWeight.w600),
-                          ),
-                          const Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                            child: Icon(
-                              Icons.arrow_circle_right,
-                              color: Colors.black,
-                              size: 18,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.network(
-                              'https://images.unsplash.com/photo-1573806439793-82aa612294b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNXx8a29yZWFuJTIwZm9vZHxlbnwwfHx8fDE2OTY0MTg4OTN8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                              width: 300,
-                              height: 155,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Text(
-                              'Better with Gochujang!',
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            //Promo Main Container -> Carousel End
-
-            //Popular Items Text Container
-
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    'Popular Items',
-                    style: GoogleFonts.poppins(
-                        fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                ],
+            SizedBox(
+              height: 250, // Adjust the height as needed
+              child: CarouselSlider.builder(
+                itemCount: dataList.length,
+                options: CarouselOptions(
+                  enableInfiniteScroll: true, // Set this to true for looping
+                  autoPlay:
+                      true, // Set this to true if you want it to auto-play
+                  autoPlayInterval: const Duration(
+                      seconds: 6), // Set auto-play interval as needed
+                  viewportFraction: 0.8,
+                ),
+                itemBuilder: (context, index, realIndex) {
+                  final dataIndex = realIndex % dataList.length;
+                  return carouselView(dataIndex);
+                },
               ),
             ),
             //Popular Items Text Container End
@@ -404,6 +369,61 @@ class HomeScreen extends StatelessWidget {
           //ListView Contents End
         ),
       ),
+    );
+  }
+
+  Widget carouselView(int index) {
+    return carouselCard(dataList[index]);
+  }
+
+  Widget carouselCard(DataModel data) {
+    return Column(
+      children: <Widget>[
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Text(
+              'Order Now',
+              style: GoogleFonts.poppins(
+                  fontSize: 18, fontWeight: FontWeight.w600),
+            ),
+            const Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+              child: Icon(
+                Icons.arrow_circle_right,
+                color: Colors.black,
+                size: 18,
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+              height: 140,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(data.imageName),
+                ),
+              )),
+        ),
+        Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(10, 5, 0, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                " ${data.promoMsg}",
+                style: GoogleFonts.poppins(
+                    fontSize: 14, fontWeight: FontWeight.w500),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
