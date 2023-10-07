@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:groceryapp/pages/cart_page.dart';
 import 'package:groceryapp/pages/home_screen.dart';
 import 'package:groceryapp/pages/profile_page.dart';
@@ -17,7 +16,12 @@ class _LandingState extends State<Landing> {
   void _navigateBottomNav(int index) {
     setState(() {
       _selectedIndex = index;
+      _scrollToTop(); // Call _scrollToTop when changing tabs
     });
+  }
+
+  void _scrollToTop() {
+    // Implement  scrolling logic here.
   }
 
   final List<Widget> _pages = [
@@ -33,7 +37,7 @@ class _LandingState extends State<Landing> {
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             const SliverAppBar(
-              expandedHeight: 100.0,
+              expandedHeight: 70.0,
               floating: true,
               pinned: false,
               backgroundColor: Colors.transparent,
