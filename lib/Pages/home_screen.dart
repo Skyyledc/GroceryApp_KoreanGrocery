@@ -399,10 +399,13 @@ class _HomeScreenState extends State<HomeScreen> {
         Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Text(
-              'Order Now',
-              style: GoogleFonts.poppins(
-                  fontSize: 18, fontWeight: FontWeight.w600),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+              child: Text(
+                'Order Now',
+                style: GoogleFonts.poppins(
+                    fontSize: 18, fontWeight: FontWeight.w600),
+              ),
             ),
             const Padding(
               padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
