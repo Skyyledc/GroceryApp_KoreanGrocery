@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "806daaee2527d8686484f6a085092f04c969c84b56e6e0d91bdee8174b0b1ecd"
+build_start_time: [1696751603, 392590045]
+build_end_time: [1696751603, 547397136]
+inputs:
+  "/Users/Steven/Documents/GitHub/GroceryApp_KoreanGrocery/macos/Flutter/GeneratedPluginRegistrant.swift": !private [1696751508, 418595314]
+  "/Users/Steven/Documents/GitHub/GroceryApp_KoreanGrocery/macos/Runner/AppDelegate.swift": !private [1696745085, 889487743]
+  "/Users/Steven/Documents/GitHub/GroceryApp_KoreanGrocery/macos/Runner/MainFlutterWindow.swift": !private [1696745085, 895281314]
