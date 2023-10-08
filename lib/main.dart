@@ -4,6 +4,7 @@ import 'package:groceryapp/pages/get_started.dart';
 import 'package:groceryapp/pages/home_screen.dart';
 import 'package:groceryapp/pages/landing.dart';
 import 'package:groceryapp/pages/profile_page.dart';
+import 'package:groceryapp/pages/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const GetStarted(),
+      home: const SplashScreen(),
       routes: {
+        '/getstarted': (context) => const GetStarted(),
         '/landing': (context) => const Landing(),
         '/homescreen': (context) => const HomeScreen(),
         '/cartscreen': (context) => const CartPage(),
