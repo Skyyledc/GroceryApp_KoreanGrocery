@@ -311,6 +311,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
+
+            //Popular Items Text Container
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'Popular Items',
+                    style: GoogleFonts.poppins(
+                        fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+            ),
             //Popular Items Text Container End
 
             //Popular Items Main Grid
