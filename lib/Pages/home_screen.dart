@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:groceryapp/models/models.dart';
+import 'package:groceryapp/models/Carouselmodel.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -397,7 +394,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return carouselCard(dataList[index]);
   }
 
-  Widget carouselCard(DataModel data) {
+  Widget carouselCard(CarouselModel data) {
     return Column(
       children: <Widget>[
         Row(
