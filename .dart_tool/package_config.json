@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animated_text_kit",
+      "rootUri": "file:///C:/Users/steve/AppData/Local/Pub/Cache/hosted/pub.dev/animated_text_kit-4.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///C:/Users/steve/AppData/Local/Pub/Cache/hosted/pub.dev/archive-3.4.5",
       "packageUri": "lib/",
@@ -290,7 +296,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-10-08T09:46:03.307396Z",
+  "generated": "2023-10-08T11:14:20.060790Z",
   "generator": "pub",
   "generatorVersion": "3.1.3"
 }
