@@ -36,22 +36,22 @@ class _LandingState extends State<Landing> {
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
-            const SliverAppBar(
-              expandedHeight: 70.0,
-              floating: true,
-              pinned: false,
-              backgroundColor: Colors.transparent,
-              flexibleSpace: FlexibleSpaceBar(
-                title: Text(
-                  'Annyeong!',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
+            // const SliverAppBar(
+            //   expandedHeight: 70.0,
+            //   floating: true,
+            //   pinned: false,
+            //   backgroundColor: Colors.transparent,
+            //   flexibleSpace: FlexibleSpaceBar(
+            //     title: Text(
+            //       'Annyeong!',
+            //       style: TextStyle(
+            //         color: Colors.black,
+            //         fontSize: 20,
+            //         fontWeight: FontWeight.bold,
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ];
         },
         body: _pages[_selectedIndex],
