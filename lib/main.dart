@@ -4,6 +4,7 @@ import 'package:groceryapp/pages/get_started.dart';
 import 'package:groceryapp/pages/home_screen.dart';
 import 'package:groceryapp/pages/landing.dart';
 import 'package:groceryapp/pages/profile_page.dart';
+import 'package:groceryapp/pages/search_page.dart';
 import 'package:groceryapp/pages/splash.dart';
 
 void main() {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/landing': (context) => const Landing(),
         '/homescreen': (context) => const HomeScreen(),
         '/cartscreen': (context) => const CartPage(),
+        '/searchscreen': (context) => const Searchpage(),
         '/profilescreen': (context) => const ProfilePage(),
       },
     );
