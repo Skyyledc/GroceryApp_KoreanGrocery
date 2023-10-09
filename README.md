@@ -15,3 +15,8 @@ Update:
 - Created a Model to update Carousel Efficiently
 
 ![image](https://github.com/Skyyledc/GroceryApp_KoreanGrocery/assets/123300731/a084edca-bd8d-46ec-9b30-32d986493d7f)
+
+10/8/2023
+- Added a splash screen
+- Updated Home Screen UI
+- Added a functional search screen
