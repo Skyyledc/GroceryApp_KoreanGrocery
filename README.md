@@ -20,3 +20,9 @@ Update:
 - Added a splash screen
 - Updated Home Screen UI
 - Added a functional search screen
+
+Home Screen:
+![image](https://github.com/Skyyledc/GroceryApp_KoreanGrocery/assets/123300731/97cd1b23-2643-4db4-b879-77e7296d7feb)
+Search Screen
+![image](https://github.com/Skyyledc/GroceryApp_KoreanGrocery/assets/123300731/1d66a1b9-8146-48a3-8300-c76cf4d27459)
+
