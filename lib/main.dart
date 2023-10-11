@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Pages/login_page.dart';
+import 'package:groceryapp/Pages/signup_page.dart';
 import 'package:groceryapp/pages/cart_page.dart';
 import 'package:groceryapp/pages/get_started.dart';
 import 'package:groceryapp/pages/home_screen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      home: const SplashScreen(),
       routes: {
         '/getstarted': (context) => const GetStarted(),
         '/landing': (context) => const Landing(),
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         '/cartscreen': (context) => const CartPage(),
         '/searchscreen': (context) => const Searchpage(),
         '/profilescreen': (context) => const ProfilePage(),
-        'loginscreen': (context) => const LoginScreen(),
+        '/loginscreen': (context) => const LoginScreen(),
+        '/signupscreen': (context) => const SignupScreen(),
       },
     );
   }
