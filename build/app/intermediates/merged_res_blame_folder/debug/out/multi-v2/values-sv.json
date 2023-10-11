@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.racks.kgroceryapp-mergeDebugResources-12:/values-sv/values-sv.xml",
+            "outputFile": "com.example.groceryapp-mergeDebugResources-12:/values-sv/values-sv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\steve\\.gradle\\caches\\transforms-3\\55bcb5de5f3e83fcdc57239c67e2a357\\transformed\\core-1.6.0\\res\\values-sv\\values-sv.xml",

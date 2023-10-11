@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.racks.kgroceryapp-mergeDebugResources-12:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.groceryapp-mergeDebugResources-12:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "D:\\Program Projects\\Flutter\\GroceryApp_KoreanGrocery\\android\\app\\src\\main\\res\\values-night\\styles.xml",

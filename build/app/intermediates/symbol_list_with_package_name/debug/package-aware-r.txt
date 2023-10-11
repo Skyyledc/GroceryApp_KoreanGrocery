@@ -1,4 +1,4 @@
-com.racks.kgroceryapp
+com.example.groceryapp
 attr activityAction
 attr activityName
 attr alpha

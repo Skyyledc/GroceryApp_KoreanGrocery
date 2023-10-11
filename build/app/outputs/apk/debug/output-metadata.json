@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.racks.kgroceryapp",
+  "applicationId": "com.example.groceryapp",
   "variantName": "debug",
   "elements": [
     {

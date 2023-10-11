@@ -94,7 +94,7 @@
     <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
     <string name="gcm_defaultSenderId" translatable="false">851381955151</string>
     <string name="google_api_key" translatable="false">AIzaSyAw9FP-xglM6dc_biAPVSSYbYLkRxac5o8</string>
-    <string name="google_app_id" translatable="false">1:851381955151:android:c94481cd35e26170bdd83a</string>
+    <string name="google_app_id" translatable="false">1:851381955151:android:9c82d5cb8d302b6dbdd83a</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAw9FP-xglM6dc_biAPVSSYbYLkRxac5o8</string>
     <string name="google_storage_bucket" translatable="false">kgrocery-a6496.appspot.com</string>
     <string name="project_id" translatable="false">kgrocery-a6496</string>

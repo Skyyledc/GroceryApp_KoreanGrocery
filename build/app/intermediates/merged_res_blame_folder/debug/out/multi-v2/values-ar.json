@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.racks.kgroceryapp-mergeDebugResources-12:/values-ar/values-ar.xml",
+            "outputFile": "com.example.groceryapp-mergeDebugResources-12:/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "C:\\Users\\steve\\.gradle\\caches\\transforms-3\\3737e06f05517356c74358f32ec9a8d9\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-ar\\values.xml",
