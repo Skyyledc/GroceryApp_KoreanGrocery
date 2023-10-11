@@ -8,46 +8,49 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-          child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+      body: SingleChildScrollView(
           child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.pink[200],
-                  borderRadius:
-                      const BorderRadius.vertical(bottom: Radius.circular(18)),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Grocery Branch',
-                      style: GoogleFonts.poppins(
-                        color: Colors.black,
-                        fontSize: 25,
-                      ),
-                    ),
-                    Text(
-                      'Address of branch',
-                      style: GoogleFonts.poppins(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.pink[200],
+                borderRadius:
+                    const BorderRadius.vertical(bottom: Radius.circular(18)),
               ),
-            ],
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 85,
+                  ),
+                  Text(
+                    'Grocery Branch',
+                    style: GoogleFonts.poppins(
+                      color: Colors.black,
+                      fontSize: 25,
+                    ),
+                  ),
+                  Text(
+                    'Address of branch',
+                    style: GoogleFonts.poppins(
+                      color: Colors.black,
+                      fontSize: 12,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
+        ],
       )),
     );
   }
