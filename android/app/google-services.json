@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "851381955151",
+    "project_id": "kgrocery-a6496",
+    "storage_bucket": "kgrocery-a6496.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851381955151:android:c94481cd35e26170bdd83a",
+        "android_client_info": {
+          "package_name": "com.racks.kgroceryapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw9FP-xglM6dc_biAPVSSYbYLkRxac5o8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

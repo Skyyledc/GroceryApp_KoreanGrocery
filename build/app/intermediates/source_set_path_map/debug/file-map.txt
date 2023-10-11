@@ -1,13 +1,18 @@
-com.example.groceryapp-jetified-window-1.0.0-beta04-0 C:\Users\steve\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\res
-com.example.groceryapp-jetified-annotation-experimental-1.1.0-1 C:\Users\steve\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\res
-com.example.groceryapp-core-1.6.0-2 C:\Users\steve\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\res
-com.example.groceryapp-jetified-window-java-1.0.0-beta04-3 C:\Users\steve\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
-com.example.groceryapp-debug-4 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\android\app\src\debug\res
-com.example.groceryapp-main-5 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\android\app\src\main\res
-com.example.groceryapp-pngs-6 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\generated\res\pngs\debug
-com.example.groceryapp-resValues-7 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\generated\res\resValues\debug
-com.example.groceryapp-rs-8 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\generated\res\rs\debug
-com.example.groceryapp-mergeDebugResources-9 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
-com.example.groceryapp-mergeDebugResources-10 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
-com.example.groceryapp-merged_res-11 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\intermediates\merged_res\debug
-com.example.groceryapp-packaged_res-12 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\packaged_res\debug
+com.racks.kgroceryapp-jetified-play-services-basement-18.1.0-0 C:\Users\steve\.gradle\caches\transforms-3\3737e06f05517356c74358f32ec9a8d9\transformed\jetified-play-services-basement-18.1.0\res
+com.racks.kgroceryapp-core-1.6.0-1 C:\Users\steve\.gradle\caches\transforms-3\55bcb5de5f3e83fcdc57239c67e2a357\transformed\core-1.6.0\res
+com.racks.kgroceryapp-jetified-firebase-common-20.3.3-2 C:\Users\steve\.gradle\caches\transforms-3\703a37fd05f52d39335c229696e35ff5\transformed\jetified-firebase-common-20.3.3\res
+com.racks.kgroceryapp-jetified-window-java-1.0.0-beta04-3 C:\Users\steve\.gradle\caches\transforms-3\981afee23352a7ed07a7f22c39d8b412\transformed\jetified-window-java-1.0.0-beta04\res
+com.racks.kgroceryapp-jetified-window-1.0.0-beta04-4 C:\Users\steve\.gradle\caches\transforms-3\debfbf90a2465fdd6e98dc208301c729\transformed\jetified-window-1.0.0-beta04\res
+com.racks.kgroceryapp-jetified-annotation-experimental-1.1.0-5 C:\Users\steve\.gradle\caches\transforms-3\fdb00f16c339871e988c28b1c0df6b67\transformed\jetified-annotation-experimental-1.1.0\res
+com.racks.kgroceryapp-debug-6 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\android\app\src\debug\res
+com.racks.kgroceryapp-main-7 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\android\app\src\main\res
+com.racks.kgroceryapp-google-services-8 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\generated\res\google-services\debug
+com.racks.kgroceryapp-pngs-9 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\generated\res\pngs\debug
+com.racks.kgroceryapp-resValues-10 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\generated\res\resValues\debug
+com.racks.kgroceryapp-rs-11 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\generated\res\rs\debug
+com.racks.kgroceryapp-mergeDebugResources-12 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.racks.kgroceryapp-mergeDebugResources-13 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.racks.kgroceryapp-merged_res-14 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\intermediates\merged_res\debug
+com.racks.kgroceryapp-packaged_res-15 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\packaged_res\debug
+com.racks.kgroceryapp-packaged_res-16 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\packaged_res\debug
+com.racks.kgroceryapp-packaged_res-17 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\shared_preferences_android\intermediates\packaged_res\debug
