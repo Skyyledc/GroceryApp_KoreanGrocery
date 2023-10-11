@@ -27,6 +27,7 @@ INJECTED from D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\android\app\s
 MERGED from D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\android\app\src\main\AndroidManifest.xml:1:1-33:12
 MERGED from [:shared_preferences_android] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_core] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:flutter_keyboard_visibility] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\steve\.gradle\caches\transforms-3\981afee23352a7ed07a7f22c39d8b412\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\steve\.gradle\caches\transforms-3\debfbf90a2465fdd6e98dc208301c729\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
@@ -74,6 +75,8 @@ MERGED from [:shared_preferences_android] D:\Program Projects\Flutter\GroceryApp
 MERGED from [:shared_preferences_android] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_core] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_core] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_keyboard_visibility] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_keyboard_visibility] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\steve\.gradle\caches\transforms-3\981afee23352a7ed07a7f22c39d8b412\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
