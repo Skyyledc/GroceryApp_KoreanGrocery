@@ -8,12 +8,10 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  bool isFirstTime = true;
-
   @override
   void initState() {
     super.initState();
@@ -22,7 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _initialize() async {
+    await Future.delayed(const Duration(seconds: 5));
     // Check if it's the first time using the app
+
     bool isFirstTime = await checkFirstTime();
     if (isFirstTime) {
       // If it's the first time, navigate to the GetStarted screen
@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => const GetStarted(),
+        builder: (context) => const GetStarted(), // No need for 'const' here
       ),
     );
   }
@@ -51,8 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) =>
-            const HomeScreen(), // Change to your actual home screen
+        builder: (context) => const HomeScreen(), // No need for 'const' here
       ),
     );
   }
@@ -60,11 +59,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-        child: Lottie.network(
-          'https://lottie.host/f23731df-4606-4e22-85e5-e7bbfffab645/KozGbVTItV.json',
-          key: const Key('lottie_animation'),
-        ),
+        child: Image.asset('assets/images/Logo1.png'),
       ),
     );
   }
