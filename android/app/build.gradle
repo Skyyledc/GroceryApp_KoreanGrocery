@@ -25,6 +25,10 @@ if (flutterVersionName == null) {
 apply plugin: 'com.google.gms.google-services'
 
 android {
+    defaultConfig {
+        minSdkVersion 20
+    }
+    compileSdkVersion 33
     namespace "com.example.groceryapp"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion

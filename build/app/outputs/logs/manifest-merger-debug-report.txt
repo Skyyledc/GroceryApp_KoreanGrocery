@@ -40,7 +40,9 @@ MERGED from D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\android\app\src
 MERGED from [:shared_preferences_android] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_auth] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_core] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:connectivity] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:flutter_keyboard_visibility] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:fluttertoast] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\steve\.gradle\caches\transforms-3\981afee23352a7ed07a7f22c39d8b412\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\steve\.gradle\caches\transforms-3\debfbf90a2465fdd6e98dc208301c729\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
@@ -100,8 +102,12 @@ MERGED from [:firebase_auth] D:\Program Projects\Flutter\GroceryApp_KoreanGrocer
 MERGED from [:firebase_auth] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_core] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_core] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:connectivity] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:connectivity] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_keyboard_visibility] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_keyboard_visibility] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\flutter_keyboard_visibility\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\steve\.gradle\caches\transforms-3\981afee23352a7ed07a7f22c39d8b412\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
@@ -212,6 +218,14 @@ ADDED from [:firebase_core] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery
 		ADDED from [:firebase_core] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 	android:name
 		ADDED from [:firebase_core] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:connectivity] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
+MERGED from [com.google.firebase:firebase-auth:22.1.2] C:\Users\steve\.gradle\caches\transforms-3\74e8c87a0e8b0d801f9b322fdfb10d60\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-auth:22.1.2] C:\Users\steve\.gradle\caches\transforms-3\74e8c87a0e8b0d801f9b322fdfb10d60\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\steve\.gradle\caches\transforms-3\93a1a1a5c00b288ef57e708c7a47bd62\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\steve\.gradle\caches\transforms-3\93a1a1a5c00b288ef57e708c7a47bd62\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:8:5-79
+	android:name
+		ADDED from [:connectivity] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\steve\.gradle\caches\transforms-3\debfbf90a2465fdd6e98dc208301c729\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 	android:required
@@ -224,12 +238,6 @@ ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\steve\.gradle\caches\t
 		ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\steve\.gradle\caches\transforms-3\debfbf90a2465fdd6e98dc208301c729\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
 	android:name
 		ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\steve\.gradle\caches\transforms-3\debfbf90a2465fdd6e98dc208301c729\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-auth:22.1.2] C:\Users\steve\.gradle\caches\transforms-3\74e8c87a0e8b0d801f9b322fdfb10d60\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\steve\.gradle\caches\transforms-3\93a1a1a5c00b288ef57e708c7a47bd62\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:8:5-79
-MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\steve\.gradle\caches\transforms-3\93a1a1a5c00b288ef57e708c7a47bd62\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:8:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-auth:22.1.2] C:\Users\steve\.gradle\caches\transforms-3\74e8c87a0e8b0d801f9b322fdfb10d60\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:26:22-76
 activity#com.google.firebase.auth.internal.GenericIdpActivity
 ADDED from [com.google.firebase:firebase-auth:22.1.2] C:\Users\steve\.gradle\caches\transforms-3\74e8c87a0e8b0d801f9b322fdfb10d60\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:29:9-46:20
 	android:excludeFromRecents

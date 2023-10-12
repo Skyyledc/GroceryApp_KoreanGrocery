@@ -15,8 +15,10 @@ com.example.groceryapp-rs-13 D:\Program Projects\Flutter\GroceryApp_KoreanGrocer
 com.example.groceryapp-mergeDebugResources-14 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
 com.example.groceryapp-mergeDebugResources-15 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
 com.example.groceryapp-merged_res-16 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\app\intermediates\merged_res\debug
-com.example.groceryapp-packaged_res-17 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_auth\intermediates\packaged_res\debug
-com.example.groceryapp-packaged_res-18 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\packaged_res\debug
-com.example.groceryapp-packaged_res-19 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\flutter_keyboard_visibility\intermediates\packaged_res\debug
-com.example.groceryapp-packaged_res-20 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\packaged_res\debug
-com.example.groceryapp-packaged_res-21 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\shared_preferences_android\intermediates\packaged_res\debug
+com.example.groceryapp-packaged_res-17 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\connectivity\intermediates\packaged_res\debug
+com.example.groceryapp-packaged_res-18 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_auth\intermediates\packaged_res\debug
+com.example.groceryapp-packaged_res-19 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\firebase_core\intermediates\packaged_res\debug
+com.example.groceryapp-packaged_res-20 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\flutter_keyboard_visibility\intermediates\packaged_res\debug
+com.example.groceryapp-packaged_res-21 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\fluttertoast\intermediates\packaged_res\debug
+com.example.groceryapp-packaged_res-22 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\path_provider_android\intermediates\packaged_res\debug
+com.example.groceryapp-packaged_res-23 D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\shared_preferences_android\intermediates\packaged_res\debug

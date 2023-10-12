@@ -16,8 +16,8 @@
 15-->D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\android\app\src\debug\AndroidManifest.xml:6:5-66
 15-->D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\android\app\src\debug\AndroidManifest.xml:6:22-64
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\steve\.gradle\caches\transforms-3\74e8c87a0e8b0d801f9b322fdfb10d60\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:26:5-79
-16-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\steve\.gradle\caches\transforms-3\74e8c87a0e8b0d801f9b322fdfb10d60\transformed\jetified-firebase-auth-22.1.2\AndroidManifest.xml:26:22-76
+16-->[:connectivity] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
+16-->[:connectivity] D:\Program Projects\Flutter\GroceryApp_KoreanGrocery\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
 17
 18    <application
 19        android:name="android.app.Application"
@@ -25,7 +25,7 @@
 20-->[androidx.core:core:1.6.0] C:\Users\steve\.gradle\caches\transforms-3\55bcb5de5f3e83fcdc57239c67e2a357\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 21        android:debuggable="true"
 22        android:icon="@mipmap/ic_launcher"
-23        android:label="groceryapp" >
+23        android:label="KGroceryApp" >
 24        <activity
 25            android:name="com.example.groceryapp.MainActivity"
 26            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
