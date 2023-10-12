@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceryapp/pages/get_started.dart';
-import 'package:groceryapp/pages/home_screen.dart'; // Change 'home.dart' to your actual home screen
-
-import 'package:firebase_auth/firebase_auth.dart'; // Import Firebase Authentication
+import 'package:connectivity/connectivity.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -19,36 +17,69 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _initialize() async {
-    await Future.delayed(const Duration(seconds: 5));
+    await Future.delayed(const Duration(seconds: 1));
+// Check for internet connectivity
+    var connectivityResult = await Connectivity().checkConnectivity();
 
-    // Check if a user is already signed in with Firebase Authentication
-    User? user = FirebaseAuth.instance.currentUser;
-
-    if (user == null) {
-      // No user is logged in, navigate to the GetStarted screen
-      navigateToGetStarted();
+    if (connectivityResult == ConnectivityResult.none) {
+      // No internet connection, show a custom pop-up
+      showNoInternetPopup();
     } else {
-      // A user is already signed in, navigate to the Home screen
-      navigateToHome();
+      // Check if a user is already signed in with Firebase Authentication
+      User? user = FirebaseAuth.instance.currentUser;
+
+      if (user == null) {
+        await Future.delayed(const Duration(seconds: 2));
+        // No user is logged in, navigate to the GetStarted screen
+        navigateToGetStarted();
+      } else {
+        await Future.delayed(const Duration(seconds: 2));
+        // A user is already signed in, navigate to the Home screen
+        navigateToMain();
+      }
     }
   }
 
-  void navigateToGetStarted() {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const GetStarted(),
-      ),
+  void showNoInternetPopup() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("No Internet Connection"),
+          content: const Text("You need an internet connection to proceed."),
+          actions: <Widget>[
+            TextButton(
+              child: const Text("Try Again"),
+              onPressed: () {
+                Navigator.of(context).pop();
+                _initialize(); // Retry internet connectivity check
+              },
+            ),
+            TextButton(
+              child: const Text("Close App"),
+              onPressed: () {
+                Navigator.of(context).pop();
+                // Close the application
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              },
+            ),
+          ],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            side: const BorderSide(color: Colors.black, width: 1),
+          ),
+        );
+      },
     );
   }
 
-  void navigateToHome() {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const HomeScreen(),
-      ),
-    );
+  void navigateToGetStarted() {
+    Navigator.pushReplacementNamed(context, '/onboardingscreen');
+  }
+
+  void navigateToMain() {
+    Navigator.pushReplacementNamed(context, '/landing');
   }
 
   @override
