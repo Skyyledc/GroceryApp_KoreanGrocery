@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import 'package:groceryapp/pages/landing.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -10,6 +13,9 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _passwordVisible = false;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  String _errorText = ''; // Initialize error message as an empty string.
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +45,11 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
 
               //Email Text Field
-
               SizedBox(
                 width: 300,
                 height: 50,
                 child: TextFormField(
+                  controller: _emailController,
                   cursorColor: Colors.black,
                   style: GoogleFonts.poppins(
                     color: Colors.black,
@@ -82,6 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 300,
                 height: 50,
                 child: TextFormField(
+                  controller: _passwordController,
                   cursorColor: Colors.grey[100],
                   style: GoogleFonts.poppins(
                     color: Colors.black,
@@ -106,8 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     labelText: 'Password',
                     labelStyle: GoogleFonts.poppins(
                       fontSize: 14,
-                      color:
-                          Colors.black, // Change label text color when focused
+                      color: Colors.black,
                     ),
                     suffixIcon: GestureDetector(
                       onTap: () {
@@ -131,12 +137,51 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 25,
               ),
 
+              Text(
+                _errorText, // Display the error message here.
+                style: const TextStyle(
+                  color: Colors
+                      .red, // Use a different color for the error message.
+                ),
+              ),
+
               //Login Button
               SizedBox(
                 width: 250,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    BuildContext context = this.context;
+                    try {
+                      UserCredential userCredential = await FirebaseAuth
+                          .instance
+                          .signInWithEmailAndPassword(
+                        email: _emailController.text,
+                        password: _passwordController.text,
+                      );
+                      // Check if sign-in is successful
+                      if (userCredential.user != null) {
+                        // Navigate to the home page
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const Landing(), // Replace 'HomeScreen()' with your home screen widget
+                          ),
+                        );
+                      } else {
+                        // Handle unsuccessful sign-in
+                        setState(() {
+                          _errorText = 'Sign-in was not successful.';
+                        });
+                      }
+                    } catch (e) {
+                      // Handle login errors, such as wrong credentials.
+                      setState(() {
+                        _errorText = 'Error: $e';
+                      });
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.pink[300],
                     shape: RoundedRectangleBorder(
