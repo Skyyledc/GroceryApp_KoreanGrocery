@@ -57,7 +57,7 @@ class GetStarted extends StatelessWidget {
                 ),
                 child: Text(
                   "Get Started!",
-                  style: GoogleFonts.oxygen(
+                  style: GoogleFonts.poppins(
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
                     fontSize: 15,
