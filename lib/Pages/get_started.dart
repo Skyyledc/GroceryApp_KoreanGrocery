@@ -65,7 +65,7 @@ class GetStarted extends StatelessWidget {
                 ),
                 onPressed: () {
                   // Navigate to Login but for now, Navigate to Home
-                  Navigator.pushReplacementNamed(context, '/landing');
+                  Navigator.pushReplacementNamed(context, '/loginscreen');
                 },
               ),
             ),
