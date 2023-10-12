@@ -5,8 +5,6 @@ A Flutter Application
 10/6/2023
 Implemented Home Screen UI w/ Navbar
 
-![image](https://github.com/Skyyledc/GroceryApp_KoreanGrocery/assets/123300731/609e2746-6c71-4b30-ae11-807dc09816e9)
-
 10/7/2023
 - Implemented Home Screen Stateless Widget and Get Started screen widget to simulate navigation
 Update:
@@ -14,15 +12,22 @@ Update:
 - Updated Get Started UI
 - Created a Model to update Carousel Efficiently
 
-![image](https://github.com/Skyyledc/GroceryApp_KoreanGrocery/assets/123300731/a084edca-bd8d-46ec-9b30-32d986493d7f)
 
 10/8/2023
 - Added a splash screen
 - Updated Home Screen UI
 - Added a functional search screen
 
-Home Screen:
-![image](https://github.com/Skyyledc/GroceryApp_KoreanGrocery/assets/123300731/97cd1b23-2643-4db4-b879-77e7296d7feb)
-Search Screen
-![image](https://github.com/Skyyledc/GroceryApp_KoreanGrocery/assets/123300731/1d66a1b9-8146-48a3-8300-c76cf4d27459)
+10/9/2023 -> 10/13/2023
+- Updated Readme removed previous images
+- Added Functional Login and Signup pages
+- Updated Splash screen logic to redirect users to onboarding when no user is logged in and redirect to the landing page when the user is logged in. (Memory storage and check)
+- Added check for User Sign in
+- Replaced Get Started screen to Onboarding page (Integrated page view and get started in one page)
+- Added a temporary button in Profile page to simulate sign out
+- Updated Cart screen UI
+- Tried to implement Google Maps and Location but failed.
+- Implemented error catch
+- Updated App name  
+
 
