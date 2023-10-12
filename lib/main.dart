@@ -6,6 +6,7 @@ import 'package:groceryapp/pages/cart_page.dart';
 import 'package:groceryapp/pages/get_started.dart';
 import 'package:groceryapp/pages/home_screen.dart';
 import 'package:groceryapp/pages/landing.dart';
+import 'package:groceryapp/pages/onboarding_page.dart';
 import 'package:groceryapp/pages/profile_page.dart';
 import 'package:groceryapp/pages/search_page.dart';
 import 'package:groceryapp/pages/splash.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/searchscreen': (context) => const Searchpage(),
         '/profilescreen': (context) => const ProfilePage(),
         '/loginscreen': (context) => const LoginScreen(),
+        '/onboardingscreen': (context) => const OnboardingPage(),
         '/signupscreen': (context) => const SignupScreen(),
       },
     );
