@@ -444,7 +444,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return carouselCard(dataList[index]);
   }
 
-  Widget carouselCard(CarouselModel data) {
+  Widget carouselCard(Carousel_Model data) {
     return Column(
       children: <Widget>[
         Row(
