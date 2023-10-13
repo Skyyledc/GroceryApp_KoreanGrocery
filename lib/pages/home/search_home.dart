@@ -12,8 +12,11 @@ class SearchContainerHome extends StatefulWidget {
 class _SearchContainerHomeState extends State<SearchContainerHome> {
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      Padding(
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/searchscreen');
+      },
+      child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
@@ -84,6 +87,6 @@ class _SearchContainerHomeState extends State<SearchContainerHome> {
           ],
         ),
       ),
-    ]);
+    );
   }
 }
