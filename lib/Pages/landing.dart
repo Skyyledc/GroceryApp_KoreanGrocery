@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapp/pages/cart_page.dart';
-import 'package:groceryapp/pages/home_screen.dart';
+import 'package:groceryapp/pages/home/home_screen.dart';
 import 'package:groceryapp/pages/profile_page.dart';
 
 class Landing extends StatefulWidget {

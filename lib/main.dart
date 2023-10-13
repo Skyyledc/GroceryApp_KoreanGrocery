@@ -4,7 +4,7 @@ import 'package:groceryapp/Pages/login_page.dart';
 import 'package:groceryapp/Pages/signup_page.dart';
 import 'package:groceryapp/pages/cart_page.dart';
 import 'package:groceryapp/pages/get_started.dart';
-import 'package:groceryapp/pages/home_screen.dart';
+import 'package:groceryapp/pages/home/home_screen.dart';
 import 'package:groceryapp/pages/landing.dart';
 import 'package:groceryapp/pages/onboarding_page.dart';
 import 'package:groceryapp/pages/profile_page.dart';
