@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'package:groceryapp/pages/landing.dart';
 import 'package:groceryapp/pages/login_page.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -110,7 +109,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 50,
                     child: TextFormField(
                       controller: _nameController,
-                      cursorColor: Colors.grey[100],
+                      cursorColor: Colors.black,
                       style: GoogleFonts.poppins(
                         color: Colors.black,
                         fontSize: 14,
@@ -152,7 +151,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 50,
                     child: TextFormField(
                       controller: _emailController,
-                      cursorColor: Colors.grey[100],
+                      cursorColor: Colors.black,
                       style: GoogleFonts.poppins(
                         color: Colors.black,
                         fontSize: 14,
@@ -194,7 +193,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 50,
                     child: TextFormField(
                       controller: _passwordController,
-                      cursorColor: Colors.grey[100],
+                      cursorColor: Colors.black,
                       style: GoogleFonts.poppins(
                         color: Colors.black,
                         fontSize: 14,
@@ -230,14 +229,23 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 15,
+              ),
               Text(
                 _errorText,
                 style: const TextStyle(
                   color: Colors.red,
                 ),
               ),
+              const SizedBox(
+                height: 5,
+              ),
               if (_isLoading)
-                const CircularProgressIndicator()
+                CircularProgressIndicator(
+                  valueColor:
+                      AlwaysStoppedAnimation<Color>(Colors.pink.shade200),
+                )
               else
                 SizedBox(
                   width: 250,
