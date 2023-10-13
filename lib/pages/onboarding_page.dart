@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:groceryapp/Pages/login_page.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +25,18 @@ class OnboardingPage extends StatefulWidget {
   _OnboardingPageState createState() => _OnboardingPageState();
 }
 
+class OnboardingItem {
+  final String title;
+  final String description;
+  final String image;
+
+  OnboardingItem({
+    required this.title,
+    required this.description,
+    required this.image,
+  });
+}
+
 class _OnboardingPageState extends State<OnboardingPage> {
   final PageController _pageController = PageController();
   final List<OnboardingItem> onboardingItems = [
@@ -43,10 +57,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
     ),
   ];
 
-  int currentIndex = 0;
+  double _currentIndex = 0;
 
   Color getButtonColor() {
-    if (currentIndex < onboardingItems.length - 1) {
+    if (_currentIndex < onboardingItems.length - 1) {
       return Colors.pink.shade200;
     } else {
       return Colors.pink.shade200;
@@ -64,7 +78,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             itemCount: onboardingItems.length,
             onPageChanged: (index) {
               setState(() {
-                currentIndex = index;
+                _currentIndex = index.toDouble();
               });
             },
             itemBuilder: (context, index) {
@@ -78,47 +92,58 @@ class _OnboardingPageState extends State<OnboardingPage> {
             right: 20,
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    onboardingItems.length,
-                    (index) => buildDot(index),
-                  ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child:
+                      buildDot(_currentIndex.toInt()), // Pass the current index
                 ),
                 const SizedBox(height: 20),
-                if (currentIndex == onboardingItems.length - 1)
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/loginscreen');
-                    },
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(getButtonColor()),
+                if (_currentIndex == onboardingItems.length - 1)
+                  SizedBox(
+                    width: 250,
+                    height: 45,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Navigate to the login screen.
+                        Navigator.pushNamed(context, '/loginscreen');
+                      },
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(getButtonColor()),
+                      ),
+                      child: Text("Get Started",
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          )),
                     ),
-                    child: const Text("Get Started"),
                   ),
-                if (currentIndex < onboardingItems.length - 1)
+                if (_currentIndex < onboardingItems.length - 1)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextButton(
                         onPressed: () {
+                          // Skip button should navigate to the login screen directly.
                           _pageController.animateToPage(
                             onboardingItems.length - 1,
                             duration: const Duration(milliseconds: 500),
-                            curve: Curves.ease,
+                            curve: Curves.easeInOut,
                           );
                         },
-                        child: const Text(
+                        child: Text(
                           "Skip",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 244, 143, 177),
-                            fontSize: 16,
+                          style: GoogleFonts.poppins(
+                            color: Colors.pink[200],
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                       ElevatedButton(
                         onPressed: () {
+                          // Move to the next onboarding screen.
                           _pageController.nextPage(
                             duration: const Duration(milliseconds: 500),
                             curve: Curves.easeIn,
@@ -128,41 +153,41 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           backgroundColor:
                               MaterialStateProperty.all(getButtonColor()),
                         ),
-                        child: const Text("Next"),
+                        child: Text(
+                          "Next",
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                       ),
                     ],
                   ),
               ],
             ),
           ),
+          // Move the DotsIndicator widget here
         ],
       ),
     );
   }
 
   Widget buildDot(int index) {
-    return Container(
-      width: 10,
-      height: 10,
-      margin: const EdgeInsets.all(5),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: currentIndex == index ? Colors.pink[200] : Colors.grey,
+    return SmoothPageIndicator(
+      controller: _pageController,
+      count: onboardingItems.length,
+      effect: ScrollingDotsEffect(
+        dotColor: Colors.grey.shade300,
+        activeDotColor: Colors.pink.shade300,
+        spacing: 15,
+        dotWidth: 12,
+        dotHeight: 12,
+        activeStrokeWidth: 2.6,
+        activeDotScale: 1.4,
       ),
     );
   }
-}
-
-class OnboardingItem {
-  final String title;
-  final String description;
-  final String image;
-
-  OnboardingItem({
-    required this.title,
-    required this.description,
-    required this.image,
-  });
 }
 
 class OnboardingItemWidget extends StatelessWidget {
