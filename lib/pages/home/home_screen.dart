@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Column(
                 //Main App Content
                 children: [
+                  //Top Bar Container
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(10, 15, 10, 0),
@@ -85,9 +86,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
+                  //Top Bar Container End
+
+                  //
                   const SizedBox(
                     height: 30,
                   ),
+                  //
+
+                  //Main Page Container
                   Container(
                     decoration: const BoxDecoration(
                       color: Color.fromARGB(255, 245, 245, 245),
@@ -97,12 +104,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Center(
                       child: Column(
                         children: [
+                          //
+
                           const SizedBox(
                             height: 35,
                           ),
+
                           // Container for Categories
                           const CategoeriesHome(),
                           // Container for Categories End
+
                           //Promo Text Container
                           Row(
                             mainAxisSize: MainAxisSize.max,
@@ -143,6 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           //Popular Items Text Container End
+
                           //Popular Items Main Grid
                           const PopularItemsHome()
                           //Populer Items Main Grid End
@@ -153,25 +165,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
                 //ListView Contents End
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/searchscreen');
-                },
-                child: Align(
-                  alignment: Alignment.topCenter,
 
-                  //
-                  child: Container(
-                    margin: const EdgeInsets.only(
-                      top: 65,
-                      left: 25,
-                      right: 25,
-                    ),
+              //
+              Align(
+                alignment: Alignment.topCenter,
 
-                    child: //Search Container -> Button Redirect
-                        const SearchContainerHome(),
-                    //Search Container -> Button Redirect End,
+                //
+                child: Container(
+                  margin: const EdgeInsets.only(
+                    top: 65,
+                    left: 25,
+                    right: 25,
                   ),
+
+                  child: //Search Container -> Button Redirect
+                      const SearchContainerHome(),
+                  //Search Container -> Button Redirect End,
                 ),
               ),
               //Search Container -> Button Redirect End
