@@ -19,84 +19,165 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: const Color.fromARGB(255, 248, 155, 188),
       //Body Container
       body: SafeArea(
-        child: Container(
-          child: SingleChildScrollView(
-            child: Column(
-              //Main App Content
-              children: [
-                //Search Container -> Button Redirect
-                const SearchContainerHome(),
-                //Search Container -> Button Redirect End
-
-                // Container for Categories
-                const CategoeriesHome(),
-                //Top Container for Choices End
-
-                //Sizedbox to create a space
-                const SizedBox(
-                  height: 15,
-                ),
-                //Sizedbox to create a space end
-
-                Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(18)),
-                  ),
-                  child: Center(
-                    child: Column(
+        child: SingleChildScrollView(
+          child: Stack(
+            children: [
+              Column(
+                //Main App Content
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(10, 15, 10, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        //Promo Text Container
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
+                        Column(
                           children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10, 5, 0, 0),
-                              child: Text(
-                                'Promo',
-                                style: GoogleFonts.poppins(
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600),
+                            Text(
+                              'DELIVER TO',
+                              style: GoogleFonts.poppins(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
                               ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  'Home',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const Icon(
+                                  Icons.keyboard_arrow_down,
+                                  color: Colors.white,
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                        //Promo Text Container End
-
-                        //Promo Main Container -> Carousel
-                        const CarouselWidgetHome(),
-                        //Promo Main Container -> Carousel End
-
-                        //Popular Items Text Container
-                        Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
+                        SizedBox(
+                          height: 50,
+                          width: 50,
+                          child: Column(
                             children: [
-                              Text(
-                                'Popular Items',
-                                style: GoogleFonts.poppins(
-                                    fontSize: 20, fontWeight: FontWeight.w600),
+                              Ink(
+                                decoration: const ShapeDecoration(
+                                  color: Colors.white24,
+                                  shape: CircleBorder(),
+                                ),
+                                child: IconButton.filled(
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/cartscreen');
+                                  },
+                                  icon: const Icon(
+                                    Icons.receipt_long_rounded,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
                         ),
-                        //Popular Items Text Container End
-                        //Popular Items Main Grid
-                        const PopularItemsHome()
-                        //Populer Items Main Grid End
                       ],
                     ),
                   ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 245, 245, 245),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(18)),
+                    ),
+                    child: Center(
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 35,
+                          ),
+                          // Container for Categories
+                          const CategoeriesHome(),
+                          // Container for Categories End
+                          //Promo Text Container
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10, 5, 0, 0),
+                                child: Text(
+                                  'Promo',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                              ),
+                            ],
+                          ),
+                          //Promo Text Container End
+
+                          //Promo Main Container -> Carousel
+                          const CarouselWidgetHome(),
+                          //Promo Main Container -> Carousel End
+
+                          //Popular Items Text Container
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10, 0, 0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
+                                  'Popular Items',
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                              ],
+                            ),
+                          ),
+                          //Popular Items Text Container End
+                          //Popular Items Main Grid
+                          const PopularItemsHome()
+                          //Populer Items Main Grid End
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+                //ListView Contents End
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/searchscreen');
+                },
+                child: Align(
+                  alignment: Alignment.topCenter,
+
+                  //
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                      top: 65,
+                      left: 25,
+                      right: 25,
+                    ),
+
+                    child: //Search Container -> Button Redirect
+                        const SearchContainerHome(),
+                    //Search Container -> Button Redirect End,
+                  ),
                 ),
-              ],
-              //ListView Contents End
-            ),
+              ),
+              //Search Container -> Button Redirect End
+            ],
           ),
+          //Search Container -> Button Redirect
         ),
       ),
     );
