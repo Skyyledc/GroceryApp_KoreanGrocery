@@ -21,7 +21,7 @@ Update:
 10/9/2023 -> 10/13/2023
 - Updated Readme removed previous images
 - Added Functional Login and Signup pages
-- Updated Splash screen logic to redirect users to onboarding when no user is logged in and redirect to the landing page when the user is logged in. (Memory storage and check)
+- Updated Splash screen logic to redirect users to onboarding when no user is logged in and redirect to the landing page when the user is logged in. (Memory state and check)
 - Added check for User Sign in
 - Replaced Get Started screen to Onboarding page (Integrated page view and get started in one page)
 - Added a temporary button in Profile page to simulate sign out
