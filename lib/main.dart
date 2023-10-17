@@ -11,6 +11,7 @@ import 'package:groceryapp/pages/profile_page.dart';
 import 'package:groceryapp/pages/search_page.dart';
 import 'package:groceryapp/pages/splash.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:groceryapp/pages/store/store_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/loginscreen': (context) => const LoginScreen(),
         '/onboardingscreen': (context) => const OnboardingPage(),
         '/signupscreen': (context) => const SignupScreen(),
+        '/storepage': (context) => const StorePage(),
       },
     );
   }
