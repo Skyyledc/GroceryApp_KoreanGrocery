@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:groceryapp/models/Carouselmodel.dart';
+import 'package:groceryapp/models/home_models/Carouselmodel.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class CarouselWidgetHome extends StatefulWidget {
