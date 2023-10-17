@@ -216,7 +216,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout toast_custom
-mipmap ic_launcher
+mipmap icon_kmart
 raw firebase_common_keep
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text

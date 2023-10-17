@@ -19,7 +19,7 @@
         android:name="android.app.Application"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon_kmart"
         android:label="KGroceryApp" >
         <activity
             android:name="com.example.groceryapp.MainActivity"

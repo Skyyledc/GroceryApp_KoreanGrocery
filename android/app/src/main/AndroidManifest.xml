@@ -2,7 +2,7 @@
     <application
         android:label="KGroceryApp"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/icon_kmart">
         <activity
             android:name=".MainActivity"
             android:exported="true"
