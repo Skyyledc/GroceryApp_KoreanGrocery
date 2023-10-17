@@ -1,18 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:groceryapp/models/home_models/Populargridmodel.dart';
+import 'package:groceryapp/models/home_models/populargridmodel.dart';
 
 class PopularItemsHome extends StatefulWidget {
-  const PopularItemsHome({super.key});
+  const PopularItemsHome({Key? key}) : super(key: key);
 
   @override
   State<PopularItemsHome> createState() => _PopularItemsHomeState();
 }
 
 class _PopularItemsHomeState extends State<PopularItemsHome> {
-  List<PopularGrid_Model> items = GridItemsProvider.getItems();
+  List<PopularGrid_Model> items = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchDataFromFirestore();
+  }
+
+  void _fetchDataFromFirestore() {
+    GridItemsProvider.getItemsFromFirestore().then((storeData) {
+      setState(() {
+        items = storeData;
+      });
+    });
+  }
 
   void _onGridItemTapped(String itemName) {
     print("Tapped item name: $itemName");
+    Navigator.pushNamed(context, '/storepage');
   }
 
   Widget buildGridItem(PopularGrid_Model item) {
