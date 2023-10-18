@@ -63,8 +63,7 @@ class _StorePageState extends State<StorePage> {
                               final updatedValue = await Navigator.pushNamed(
                                 context,
                                 '/landing',
-                                arguments:
-                                    1, // 1 corresponds to the 'Cart' page
+                                arguments: 1, //Send Screen to Cart
                               );
                             },
                             icon: const Icon(

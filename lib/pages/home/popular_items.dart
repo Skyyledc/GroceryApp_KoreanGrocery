@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapp/models/home_models/populargridmodel.dart';
+import 'package:groceryapp/models/StoreModel.dart';
 
 class PopularItemsHome extends StatefulWidget {
   const PopularItemsHome({Key? key}) : super(key: key);
@@ -14,10 +15,10 @@ class _PopularItemsHomeState extends State<PopularItemsHome> {
   @override
   void initState() {
     super.initState();
-    _fetchDataFromFirestore();
+    fetchDataFromFirestore();
   }
 
-  void _fetchDataFromFirestore() {
+  void fetchDataFromFirestore() {
     GridItemsProvider.getItemsFromFirestore().then((storeData) {
       setState(() {
         items = storeData;
@@ -25,15 +26,23 @@ class _PopularItemsHomeState extends State<PopularItemsHome> {
     });
   }
 
-  void _onGridItemTapped(String itemName) {
-    print("Tapped item name: $itemName");
-    Navigator.pushNamed(context, '/storepage');
+  void onGridItemTapped(StoreInfo storeInfo) {
+    Navigator.pushNamed(
+      context,
+      '/storepage',
+      arguments: storeInfo,
+    );
   }
 
   Widget buildGridItem(PopularGrid_Model item) {
     return GestureDetector(
       onTap: () {
-        _onGridItemTapped(item.name);
+        StoreInfo storeInfo = StoreInfo(
+          storeName: item.name,
+          imageUrl: item.imageUrl,
+          rating: item.rating,
+        );
+        onGridItemTapped(storeInfo);
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(0),

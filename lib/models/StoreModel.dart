@@ -1,29 +1,11 @@
-class Store {
-  final String name;
-  final String description;
+class StoreInfo {
+  final String storeName;
   final String imageUrl;
-  // Add other attributes as needed
+  final double rating;
 
-  Store({
-    required this.name,
-    required this.description,
+  StoreInfo({
+    required this.storeName,
     required this.imageUrl,
-    // Initialize other attributes here
+    required this.rating,
   });
-
-  List<Store> getStores() {
-    return [
-      Store(
-        name: "Store 1",
-        description: "Description for Store 1",
-        imageUrl: 'URL for Store 1 Image',
-      ),
-      Store(
-        name: "Store 2",
-        description: "Description for Store 2",
-        imageUrl: 'URL for Store 2 Image',
-      ),
-      // Add more stores with their respective URLs
-    ];
-  }
 }
