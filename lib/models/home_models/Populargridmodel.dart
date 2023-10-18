@@ -3,12 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class PopularGrid_Model {
   final String name;
   final String imageUrl;
-  final double rating;
 
   PopularGrid_Model({
     required this.name,
     required this.imageUrl,
-    required this.rating,
   });
 }
 
@@ -21,7 +19,6 @@ class GridItemsProvider {
       return PopularGrid_Model(
         name: data['name'],
         imageUrl: data['imageUrl'],
-        rating: data['rating'],
       );
     }).toList();
   }

@@ -40,7 +40,6 @@ class _PopularItemsHomeState extends State<PopularItemsHome> {
         StoreInfo storeInfo = StoreInfo(
           storeName: item.name,
           imageUrl: item.imageUrl,
-          rating: item.rating,
         );
         onGridItemTapped(storeInfo);
       },
