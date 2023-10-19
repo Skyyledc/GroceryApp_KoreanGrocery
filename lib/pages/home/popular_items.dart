@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapp/models/home_models/populargridmodel.dart';
 import 'package:groceryapp/models/StoreModel.dart';
+import 'package:groceryapp/pages/store/store_stack.dart';
+import 'package:groceryapp/pages/store/store_page.dart';
 
 class PopularItemsHome extends StatefulWidget {
   const PopularItemsHome({Key? key}) : super(key: key);
@@ -26,22 +28,28 @@ class _PopularItemsHomeState extends State<PopularItemsHome> {
     });
   }
 
-  void onGridItemTapped(StoreInfo storeInfo) {
-    Navigator.pushNamed(
+  void onGridItemTapped(PopularGrid_Model item) {
+    StoreInfo storeInfo = StoreInfo(
+      storeId: item.storeId, // Use the storeId from the grid item
+      storeName: item.name, // Use the store name from the grid item
+      imageUrl: item.imageUrl,
+      storeRating: item.storeRating.toDouble(),
+      storeDistance: item.storeDistance.toDouble(),
+    );
+
+    Navigator.push(
       context,
-      '/storepage',
-      arguments: storeInfo,
+      MaterialPageRoute(
+        builder: (context) =>
+            StorePage(storeId: item.storeId), // Pass storeId as an argument
+      ),
     );
   }
 
   Widget buildGridItem(PopularGrid_Model item) {
     return GestureDetector(
       onTap: () {
-        StoreInfo storeInfo = StoreInfo(
-          storeName: item.name,
-          imageUrl: item.imageUrl,
-        );
-        onGridItemTapped(storeInfo);
+        onGridItemTapped(item);
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(0),
