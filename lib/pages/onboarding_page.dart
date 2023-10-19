@@ -41,7 +41,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   final PageController _pageController = PageController();
   final List<OnboardingItem> onboardingItems = [
     OnboardingItem(
-      title: "Welcome to My App",
+      title: "Welcome to the App",
       description: "This is the description for the first screen.",
       image: 'assets/images/Greeting1.png',
     ),
