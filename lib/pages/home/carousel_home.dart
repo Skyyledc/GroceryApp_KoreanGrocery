@@ -40,7 +40,7 @@ class _CarouselWidgetHomeState extends State<CarouselWidgetHome> {
           autoPlay: true, // Set this to true if you want it to auto-play
           autoPlayInterval:
               const Duration(seconds: 6), // Set auto-play interval as needed
-          viewportFraction: 0.8,
+          viewportFraction: 0.85,
         ),
         itemBuilder: (context, index, realIndex) {
           final dataIndex = realIndex % dataList.length;
