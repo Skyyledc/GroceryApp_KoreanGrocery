@@ -1,12 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PopularGrid_Model {
+  final String storeId;
   final String name;
   final String imageUrl;
+  final double storeRating;
+  final double storeDistance;
 
   PopularGrid_Model({
+    required this.storeId,
     required this.name,
     required this.imageUrl,
+    required this.storeRating,
+    required this.storeDistance,
   });
 }
 
@@ -17,8 +23,11 @@ class GridItemsProvider {
     return querySnapshot.docs.map((doc) {
       final Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
       return PopularGrid_Model(
+        storeId: doc.id,
         name: data['name'],
         imageUrl: data['imageUrl'],
+        storeRating: (data['storeRating'] as num).toDouble(),
+        storeDistance: (data['storeDistance'] as num).toDouble(),
       );
     }).toList();
   }
