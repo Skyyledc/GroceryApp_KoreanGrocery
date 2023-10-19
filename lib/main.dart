@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:groceryapp/Pages/login_page.dart';
 import 'package:groceryapp/Pages/signup_page.dart';
+import 'package:groceryapp/models/StoreModel.dart';
 import 'package:groceryapp/pages/cart_page.dart';
 import 'package:groceryapp/pages/get_started.dart';
 import 'package:groceryapp/pages/home/home_screen.dart';
@@ -38,7 +39,12 @@ class MyApp extends StatelessWidget {
         '/loginscreen': (context) => const LoginScreen(),
         '/onboardingscreen': (context) => const OnboardingPage(),
         '/signupscreen': (context) => const SignupScreen(),
-        '/storepage': (context) => const StorePage(),
+        '/storepage': (context) {
+          final StoreInfo storeInfo =
+              ModalRoute.of(context)!.settings.arguments as StoreInfo;
+          return StorePage(
+              storeId: storeInfo.storeId); // Use storeId from StoreInfo
+        },
       },
     );
   }
