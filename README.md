@@ -3,7 +3,7 @@
 A Flutter Application
 
 10/6/2023
-Implemented Home Screen UI w/ Navbar
+- Implemented Home Screen UI w/ Navbar
 
 10/7/2023
 - Implemented Home Screen Stateless Widget and Get Started screen widget to simulate navigation
