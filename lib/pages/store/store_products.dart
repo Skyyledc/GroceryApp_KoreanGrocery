@@ -76,7 +76,7 @@ class _StoreProductsState extends State<StoreProducts> {
               height: 500,
               width: double.infinity,
               decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 242, 242, 242),
+                color: Colors.white,
               ),
               child: Column(
                 children: groupedProducts.entries.map((entry) {
@@ -110,58 +110,62 @@ class _StoreProductsState extends State<StoreProducts> {
                             // Use the product data to build your UI
                             return Column(
                               children: [
-                                ListTile(
-                                  leading: Image.network(
-                                    product['productImg'],
-                                    fit: BoxFit.fill,
-                                    color: isAvailable ? null : Colors.grey,
-                                    colorBlendMode:
-                                        isAvailable ? null : BlendMode.color,
-                                  ),
-                                  title: Text(
-                                    product['productName'],
-                                    style: GoogleFonts.lato(
-                                      color: isAvailable
-                                          ? Colors.black
-                                          : Colors.grey,
-                                      fontSize: 14,
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: ListTile(
+                                    leading: Image.network(
+                                      product['productImg'],
+                                      fit: BoxFit.fill,
+                                      color: isAvailable ? null : Colors.grey,
+                                      colorBlendMode:
+                                          isAvailable ? null : BlendMode.color,
                                     ),
-                                  ),
-                                  subtitle: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        '${product['cost']}.00',
-                                        style: GoogleFonts.lato(
-                                          color: isAvailable
-                                              ? Colors.black
-                                              : Colors.grey,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                    title: Text(
+                                      product['productName'],
+                                      style: GoogleFonts.lato(
+                                        color: isAvailable
+                                            ? Colors.black
+                                            : Colors.grey,
+                                        fontSize: 14,
                                       ),
-                                      if (!isAvailable)
+                                    ),
+                                    subtitle: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
                                         Text(
-                                          'Unavailable',
+                                          '${product['cost']}.00',
                                           style: GoogleFonts.lato(
-                                            color: Colors.grey,
-                                            fontSize: 12,
+                                            color: isAvailable
+                                                ? Colors.black
+                                                : Colors.grey,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                    ],
+                                        if (!isAvailable)
+                                          Text(
+                                            'Unavailable',
+                                            style: GoogleFonts.lato(
+                                              color: Colors.grey,
+                                              fontSize: 12,
+                                            ),
+                                          ),
+                                      ],
+                                    ),
+                                    trailing: isAvailable
+                                        ? IconButton(
+                                            icon: const Icon(
+                                                Icons.add_shopping_cart),
+                                            onPressed: () {
+                                              // Add to cart logic here
+                                            },
+                                          )
+                                        : null,
                                   ),
-                                  trailing: isAvailable
-                                      ? IconButton(
-                                          icon: const Icon(
-                                              Icons.add_shopping_cart),
-                                          onPressed: () {
-                                            // Add to cart logic here
-                                          },
-                                        )
-                                      : null,
                                 ),
-                                if (index != categoryProducts.length - 1)
+                                if (index != categoryProducts.length - 1 ||
+                                    entry != groupedProducts.entries.last)
                                   const Divider(
                                     height: 1,
                                     color: Colors.grey,
