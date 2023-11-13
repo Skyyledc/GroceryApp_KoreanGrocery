@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:groceryapp/pages/store/store_products.dart';
 import 'package:groceryapp/pages/store/store_stack.dart';
 import 'package:groceryapp/models/StoreModel.dart';
 
@@ -137,40 +138,12 @@ class _StorePageState extends State<StorePage> {
                       storeInfo: storeInfo,
                     ), // Pass storeInfo to StoreStack
                     const SizedBox(
-                      height: 15,
+                      height: 20,
                     ),
                   ],
                 ),
               ),
-              Container(
-                height: 500,
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 242, 242, 242),
-                ),
-                child: Column(children: [
-                  Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10, 5, 0, 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              'Coming Soon!',
-                              style: GoogleFonts.poppins(
-                                color: Colors.black,
-                                fontSize: 35,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      )),
-                ]),
-              ),
+              StoreProducts(storeId: widget.storeId)
             ],
           ),
         ),

@@ -48,7 +48,7 @@ class _StoreStackState extends State<StoreStack> {
                     color:
                         const Color.fromARGB(255, 57, 57, 57).withOpacity(0.3),
                     spreadRadius: 4,
-                    blurRadius: 12,
+                    blurRadius: 7,
                     offset: const Offset(0, 3),
                   ),
                 ],
