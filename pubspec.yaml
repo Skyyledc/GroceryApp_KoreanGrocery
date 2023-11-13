@@ -49,6 +49,7 @@ dependencies:
   dots_indicator: ^2.1.2
   smooth_page_indicator: ^1.1.0
   cloud_firestore: ^4.9.3
+  riverpod: ^2.4.6
 
 flutter_launcher_icons:
 android: "launcher_icons"

@@ -410,6 +410,12 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "riverpod",
+      "rootUri": "file:///C:/Users/steve/AppData/Local/Pub/Cache/hosted/pub.dev/riverpod-2.4.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "shared_preferences",
       "rootUri": "file:///C:/Users/steve/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.2.2",
       "packageUri": "lib/",
@@ -474,6 +480,12 @@
       "rootUri": "file:///C:/Users/steve/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.11.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "state_notifier",
+      "rootUri": "file:///C:/Users/steve/AppData/Local/Pub/Cache/hosted/pub.dev/state_notifier-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "stream_channel",
@@ -548,7 +560,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-10-19T10:03:29.335780Z",
+  "generated": "2023-11-13T14:09:03.962496Z",
   "generator": "pub",
   "generatorVersion": "3.1.3"
 }
