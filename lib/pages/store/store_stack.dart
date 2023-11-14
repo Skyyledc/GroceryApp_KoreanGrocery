@@ -69,61 +69,67 @@ class _StoreStackState extends State<StoreStack> {
                         ),
                       ],
                     ),
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.star,
-                          color: Colors.yellow,
-                          size: 20,
-                        ),
-                        Text(
-                          widget.storeInfo.storeRating.toStringAsFixed(1),
-                          style: GoogleFonts.poppins(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.star,
+                            color: Colors.yellow,
+                            size: 20,
                           ),
-                        ),
-                        const SizedBox(
-                          width: 1,
-                        ),
-                        Text(
-                          'rating',
-                          style: GoogleFonts.poppins(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                          Text(
+                            widget.storeInfo.storeRating.toStringAsFixed(1),
+                            style: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        )
-                      ],
+                          const SizedBox(
+                            width: 1,
+                          ),
+                          Text(
+                            'rating',
+                            style: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.pin_drop,
-                          color: Colors.red,
-                          size: 20,
-                        ),
-                        Text(
-                          widget.storeInfo.storeDistance.toStringAsFixed(2),
-                          style: GoogleFonts.poppins(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.pin_drop,
+                            color: Colors.red,
+                            size: 20,
                           ),
-                        ),
-                        const SizedBox(
-                          width: 1,
-                        ),
-                        Text(
-                          'km',
-                          style: GoogleFonts.poppins(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                          Text(
+                            widget.storeInfo.storeDistance.toStringAsFixed(2),
+                            style: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        )
-                      ],
+                          const SizedBox(
+                            width: 1,
+                          ),
+                          Text(
+                            'km',
+                            style: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),

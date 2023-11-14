@@ -154,7 +154,8 @@ class _StoreProductsState extends State<StoreProducts> {
                                       ],
                                     ),
                                     trailing: isAvailable
-                                        ? IconButton(
+                                        ? IconButton.filled(
+                                            color: Colors.pink.shade200,
                                             icon: const Icon(
                                                 Icons.add_shopping_cart),
                                             onPressed: () {
