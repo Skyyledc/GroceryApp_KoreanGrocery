@@ -12,181 +12,244 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  late AnimationController _fadeController;
+  late Animation<double> _fadeAnimation;
+
+  late AnimationController _slideController;
+  late Animation<Offset> _slideAnimation;
+
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 248, 155, 188),
-      //Body Container
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Stack(
+  void initState() {
+    super.initState();
+
+    // Set up fade-in animation
+    _fadeController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+
+    _fadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(
+      CurvedAnimation(
+        parent: _fadeController,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    // Set up slide-up animation
+    _slideController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(0.0, 1.0),
+      end: Offset.zero,
+    ).animate(
+      CurvedAnimation(
+        parent: _slideController,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    // Trigger the animations when the widget is first built
+    _fadeController.forward();
+    _slideController.forward();
+  }
+
+  @override
+  void dispose() {
+    _fadeController.dispose();
+    _slideController.dispose();
+    super.dispose();
+  }
+
+  Widget _buildTopBar() {
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(10, 15, 10, 0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
             children: [
-              Column(
-                //Main App Content
+              Text(
+                'DELIVER TO',
+                style: GoogleFonts.poppins(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Row(
                 children: [
-                  //Top Bar Container
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(10, 15, 10, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              'DELIVER TO',
-                              style: GoogleFonts.poppins(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  'Home',
-                                  style: GoogleFonts.poppins(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                const Icon(
-                                  Icons.keyboard_arrow_down,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 50,
-                          width: 50,
-                          child: Column(
-                            children: [
-                              Ink(
-                                decoration: const ShapeDecoration(
-                                  color: Colors.white24,
-                                  shape: CircleBorder(),
-                                ),
-                                child: IconButton.filled(
-                                  color: Colors.white,
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/cartscreen');
-                                  },
-                                  icon: const Icon(
-                                    Icons.receipt_long_rounded,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                  Text(
+                    'Home',
+                    style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 50,
+            width: 50,
+            child: Column(
+              children: [
+                Ink(
+                  decoration: const ShapeDecoration(
+                    color: Colors.white24,
+                    shape: CircleBorder(),
+                  ),
+                  child: IconButton.filled(
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cartscreen');
+                    },
+                    icon: const Icon(
+                      Icons.receipt_long_rounded,
+                      color: Colors.white,
                     ),
                   ),
-                  //Top Bar Container End
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
-                  //
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  //
-
-                  //Main Page Container
-                  Container(
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 245, 245, 245),
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(18)),
+  Widget _buildMainPageContainer() {
+    return Container(
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(255, 245, 245, 245),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
+      ),
+      child: Center(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 35,
+            ),
+            // Fade-in animation for CategoriesHome
+            FadeTransition(
+              opacity: _fadeAnimation,
+              child: const CategoeriesHome(),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(10, 5, 0, 0),
+                  child: FadeTransition(
+                    opacity: _fadeAnimation,
+                    child: Text(
+                      'Promo',
+                      style: GoogleFonts.poppins(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                    child: Center(
-                      child: Column(
-                        children: [
-                          //
-
-                          const SizedBox(
-                            height: 35,
-                          ),
-
-                          // Container for Categories
-                          const CategoeriesHome(),
-                          // Container for Categories End
-
-                          //Promo Text Container
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10, 5, 0, 0),
-                                child: Text(
-                                  'Promo',
-                                  style: GoogleFonts.poppins(
-                                      color: Colors.black,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ),
-                            ],
-                          ),
-                          //Promo Text Container End
-
-                          //Promo Main Container -> Carousel
-                          const CarouselWidgetHome(),
-                          //Promo Main Container -> Carousel End
-
-                          //Popular Items Text Container
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10, 0, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  'Popular Items',
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ],
-                            ),
-                          ),
-                          //Popular Items Text Container End
-
-                          //Popular Items Main Grid
-                          const PopularItemsHome()
-                          //Populer Items Main Grid End
-                        ],
+                  ),
+                ),
+              ],
+            ),
+            // Fade-in animation for CarouselWidgetHome
+            FadeTransition(
+              opacity: _fadeAnimation,
+              child: const CarouselWidgetHome(),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  // Fade-in and Slide-up animation for PopularItemsHome
+                  SlideTransition(
+                    position: _slideAnimation,
+                    child: FadeTransition(
+                      opacity: _fadeAnimation,
+                      child: Text(
+                        'Popular Items',
+                        style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),
                 ],
-                //ListView Contents End
+              ),
+            ),
+            // Fade-in and Slide-up animation for PopularItemsHome
+            SlideTransition(
+              position: _slideAnimation,
+              child: FadeTransition(
+                opacity: _fadeAnimation,
+                child: const PopularItemsHome(),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSearchContainer() {
+    return Positioned(
+      top: 0,
+      left: 0,
+      right: 0,
+      child: Container(
+        margin: const EdgeInsets.only(
+          top: 65,
+          left: 25,
+          right: 25,
+        ),
+        child: FadeTransition(
+          opacity: _fadeAnimation,
+          child: const SearchContainerHome(),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 248, 155, 188),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Stack(
+            children: [
+              // Main Page Container
+              Column(
+                children: [
+                  // Top Bar
+                  _buildTopBar(),
+
+                  const SizedBox(height: 35),
+                  // Main Page Container
+
+                  _buildMainPageContainer(),
+                ],
               ),
 
-              //
-              Align(
-                alignment: Alignment.topCenter,
-
-                //
-                child: Container(
-                  margin: const EdgeInsets.only(
-                    top: 65,
-                    left: 25,
-                    right: 25,
-                  ),
-
-                  child: //Search Container -> Button Redirect
-                      const SearchContainerHome(),
-                  //Search Container -> Button Redirect End,
-                ),
-              ),
-              //Search Container -> Button Redirect End
+              // Search Container
+              _buildSearchContainer(),
             ],
           ),
-          //Search Container -> Button Redirect
         ),
       ),
     );
