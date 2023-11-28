@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             // Fade-in animation for CategoriesHome
             FadeTransition(
               opacity: _fadeAnimation,
-              child: const CategoeriesHome(),
+              child: const CategoriesHome(),
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
