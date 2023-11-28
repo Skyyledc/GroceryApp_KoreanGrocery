@@ -114,8 +114,8 @@ class _StorePageState extends State<StorePage> {
                               // Pass the selected index when navigating to the Landing page
                               final updatedValue = await Navigator.pushNamed(
                                 context,
-                                '/landing',
-                                arguments: 1, // Send Screen to Cart
+                                '/cartscreenback',
+                                arguments: 2, // Send Screen to Cart
                               );
                             },
                             icon: const Icon(
