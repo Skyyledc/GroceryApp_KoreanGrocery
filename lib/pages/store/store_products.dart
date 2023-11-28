@@ -1,6 +1,13 @@
+import 'dart:convert';
+
+import 'package:provider/provider.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:groceryapp/models/CartItemModel.dart';
+import 'package:groceryapp/models/CartItemsProvider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StoreProducts extends StatefulWidget {
   final String storeId;
@@ -13,6 +20,7 @@ class StoreProducts extends StatefulWidget {
 
 class _StoreProductsState extends State<StoreProducts> {
   late Future<List<Map<String, dynamic>>> products;
+  List<CartItem> cartItems = [];
 
   @override
   void initState() {
@@ -159,7 +167,7 @@ class _StoreProductsState extends State<StoreProducts> {
                                             icon: const Icon(
                                                 Icons.add_shopping_cart),
                                             onPressed: () {
-                                              // Add to cart logic here
+                                              addToCart(product);
                                             },
                                           )
                                         : null,
@@ -187,5 +195,111 @@ class _StoreProductsState extends State<StoreProducts> {
         }
       },
     );
+  }
+
+  void addToCart(Map<String, dynamic> product) async {
+    int? quantity = await _showQuantityDialog();
+    if (quantity != null && quantity > 0) {
+      final cartProvider =
+          Provider.of<CartItemsProvider>(context, listen: false);
+
+      cartProvider.addToCart(
+        CartItem(
+          productId: product['productId'],
+          productName: product['productName'],
+          price: double.parse(product['cost'].toString()),
+          quantity: quantity,
+        ),
+      );
+      saveCart();
+    }
+  }
+
+  Future<int?> _showQuantityDialog() async {
+    int quantity = 1; // Default quantity
+
+    return showDialog<int>(
+      context: context,
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            return AlertDialog(
+              title: const Text('Select Quantity'),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text('Choose the quantity for this item:'),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.remove),
+                        onPressed: () {
+                          if (quantity > 1) {
+                            setState(() {
+                              quantity--;
+                            });
+                          }
+                        },
+                      ),
+                      Text(quantity.toString()),
+                      IconButton(
+                        icon: const Icon(Icons.add),
+                        onPressed: () {
+                          setState(() {
+                            quantity++;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, null); // Return null for cancel
+                  },
+                  child: Text('Cancel',
+                      style: GoogleFonts.poppins(
+                        color: Colors.pink.shade300,
+                      )),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, quantity);
+                  },
+                  child: Text(
+                    'Add to Cart',
+                    style: GoogleFonts.poppins(
+                      color: Colors.pink.shade300,
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+  }
+
+  void saveCart() async {
+    final prefs = await SharedPreferences.getInstance();
+    final cartJson =
+        jsonEncode(cartItems.map((item) => item.toJson()).toList());
+    await prefs.setString('cartItems', cartJson);
+  }
+
+  Future<void> loadCartItems() async {
+    final prefs = await SharedPreferences.getInstance();
+    final cartJson = prefs.getString('cartItems');
+    if (cartJson != null) {
+      final List<dynamic> cartList = jsonDecode(cartJson);
+      setState(() {
+        cartItems = cartList.map((item) => CartItem.fromJson(item)).toList();
+      });
+    }
   }
 }
