@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore package
 
+//Login
 import 'package:groceryapp/pages/login_page.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -18,6 +20,9 @@ class _SignupScreenState extends State<SignupScreen> {
   String _errorText = '';
   bool _isLoading = false;
 
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
   Future<void> registerUser() async {
     setState(() {
       _isLoading = true;
@@ -25,13 +30,19 @@ class _SignupScreenState extends State<SignupScreen> {
 
     try {
       UserCredential userCredential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          await _auth.createUserWithEmailAndPassword(
         email: _emailController.text,
         password: _passwordController.text,
       );
 
       User? user = userCredential.user;
-      if (userCredential.user != null) {
+      if (user != null) {
+        // Store user information in Firestore
+        await _firestore.collection('users').doc(user.uid).set({
+          'name': _nameController.text,
+          'email': _emailController.text,
+        });
+
         // Navigate to the home page
         Navigator.pushReplacementNamed(context, '/landing');
       } else {
