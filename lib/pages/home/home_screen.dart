@@ -113,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   child: IconButton.filled(
                     color: Colors.white,
                     onPressed: () {
-                      Navigator.pushNamed(context, '/cartscreen');
+                      Navigator.pushNamed(context, '/purchase_history');
                     },
                     icon: const Icon(
                       Icons.receipt_long_rounded,
